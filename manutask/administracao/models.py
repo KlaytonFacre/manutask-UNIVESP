@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 
 # Create your models here.
@@ -45,14 +46,16 @@ class OrdemServico(models.Model):
         on_delete=models.CASCADE,
         null=False
     )
-    timestamp_abertura = models.DateTimeField()
+    timestamp_abertura = models.DateTimeField(
+        default=datetime.now()
+    )
     id_oficina_responsavel = models.ForeignKey(
         Oficina,
         on_delete=models.CASCADE
     )
-    descricao_problema = models.CharField(max_length=255)
+    descricao_problema = models.TextField(max_length=255)
     timestamp_solucao = models.DateTimeField()
-    descricao_solucao = models.CharField(max_length=255)
+    descricao_solucao = models.TextField(max_length=255)
     id_solucionador = models.ForeignKey(
         Pessoa,
         on_delete=models.CASCADE,

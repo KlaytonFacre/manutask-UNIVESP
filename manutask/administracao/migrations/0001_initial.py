@@ -39,26 +39,26 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='ordemservico',
+            name='administracao',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('timestamp_abertura', models.DateTimeField()),
                 ('descricao_problema', models.CharField(max_length=255)),
                 ('timestamp_solucao', models.DateTimeField()),
                 ('descricao_solucao', models.CharField(max_length=255)),
-                ('id_imovel', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='ordemservico.imovel')),
-                ('id_oficina_responsavel', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='ordemservico.oficina')),
-                ('id_reclamante', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='ordemservico.pessoa')),
+                ('id_imovel', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='administracao.imovel')),
+                ('id_oficina_responsavel', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='administracao.oficina')),
+                ('id_reclamante', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='administracao.pessoa')),
             ],
         ),
         migrations.AddField(
             model_name='oficina',
             name='id_supervisor',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='ordemservico.pessoa'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='administracao.pessoa'),
         ),
         migrations.AddField(
             model_name='imovel',
             name='id_locador',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='ordemservico.pessoa'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='administracao.pessoa'),
         ),
     ]

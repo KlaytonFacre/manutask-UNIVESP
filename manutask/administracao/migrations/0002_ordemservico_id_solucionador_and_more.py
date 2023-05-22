@@ -7,18 +7,18 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('ordemservico', '0001_initial'),
+        ('administracao', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='ordemservico',
+            model_name='administracao',
             name='id_solucionador',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, related_name='solucionador', to='ordemservico.pessoa'),
+            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, related_name='solucionador', to='administracao.pessoa'),
         ),
         migrations.AlterField(
-            model_name='ordemservico',
+            model_name='administracao',
             name='id_reclamante',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='reclamante', to='ordemservico.pessoa'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='reclamante', to='administracao.pessoa'),
         ),
     ]
