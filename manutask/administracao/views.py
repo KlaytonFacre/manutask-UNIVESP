@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView, ListView, UpdateView, \
     DeleteView
-from .models import Pessoa, CadastraPessoaForm
+from .models import Pessoa
+from .forms import CadastraPessoaForm
 
 
 # Create your views here.

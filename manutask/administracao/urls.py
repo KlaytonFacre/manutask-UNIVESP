@@ -6,7 +6,10 @@ from .views import IndexTemplateView, PessoaListView, PessoaCreateView, PessoaUp
 app_name = 'administracao'
 
 urlpatterns = [
+    # Homepage
     path('', IndexTemplateView.as_view(), name='index'),
+
+    # Pessoas
     path('pessoas/', PessoaListView.as_view(), name='lista_pessoas'),
     path('pessoa/atualiza/<pk>', PessoaUpdateView.as_view(), name='atualiza_pessoa'),
     path('pessoa/excluir/<pk>', PessoaDeleteView.as_view(), name='deleta_pessoa'),

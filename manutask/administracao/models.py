@@ -10,13 +10,6 @@ class Pessoa(models.Model):
     sobrenome = models.CharField(max_length=100)
 
 
-class CadastraPessoaForm(forms.ModelForm):
-
-    class Meta:
-        model = Pessoa
-        fields = '__all__'
-
-
 class Oficina(models.Model):
     id_supervisor = models.ForeignKey(
         Pessoa,
