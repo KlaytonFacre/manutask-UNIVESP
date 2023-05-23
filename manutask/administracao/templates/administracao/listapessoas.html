@@ -1,0 +1,31 @@
+<!-- Estendemos do template base -->
+{% extends "administracao/_layouts/base.html" %}
+
+<!-- Bloco que define o <title></title> da nossa página -->
+{% block title %}Pessoas cadastradas - Manutask{% endblock %}
+
+<!-- Bloco de conteúdo da página -->
+{% block conteudo %}
+<div class="container">
+  <div class="row" align="right">
+    <a href="{% url 'administracao:cadastra_pessoa' %}">
+      <i class="bi bi-asterisk fa-lg"></i>
+    </a>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      {% for pessoa in pessoas %}
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"> {{ pessoa.id }} : {{ pessoa.nome }} </h5>
+            <p class="card-text"> {{ pessoa.nome }} {{ pessoa.sobrenome }} </p>
+            <p class="card-text"> CPF: {{ pessoa.cpf }} </p>
+            <a href="{% url 'administracao:atualiza_pessoa' pk=pessoa.id %}" class="btn btn-secondary"> Atualizar </a>
+            <a href="{% url 'administracao:deleta_pessoa' pk=pessoa.id %}" class="btn btn-danger"> Deletar </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
