@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django import forms
 
 
 # Create your models here.
@@ -7,6 +8,13 @@ class Pessoa(models.Model):
     cpf = models.CharField(max_length=11)
     nome = models.CharField(max_length=50)
     sobrenome = models.CharField(max_length=100)
+
+
+class CadastraPessoaForm(forms.ModelForm):
+
+    class Meta:
+        model = Pessoa
+        fields = '__all__'
 
 
 class Oficina(models.Model):
