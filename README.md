@@ -10,7 +10,7 @@ Para testar o Manutask é necessário ter uma instalação do Docker rodando na 
 Você pode obter instruções de como instalar o Docker aqui: https://docs.docker.com/engine/install/
 
 Após a instalação com sucesso, você pode rodar o Manutask com o seguinte comando no terminal (ou CMD para máquinas Windows):
-$ docker run --name manutask -d -p 8000:8000 klaytonf/manutask:latest
+**$ docker run --name manutask -d -p 8000:8000 klaytonf/manutask:latest**
 
 ## Uso
 Após a instalação, conforme as instruções acima, basta abrir o navegador e digitar na barra de endereços:
