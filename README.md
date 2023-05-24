@@ -1,37 +1,37 @@
-# Manutask
+## Manutask
 
+Um sistema de gerenciamento de tarefas que permite que os usuários criem tarefas, atribuam responsáveis, definam prazos e monitorem o progresso das atividades de manutenção predial.
 
+## Instalação
 
-## Getting started
+O Manutask está disponível do Docker HUB (apenas para testes).
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+Para testar o Manutask é necessário ter uma instalação do Docker rodando na sua máquina local.
+Você pode obter instruções de como instalar o Docker aqui: https://docs.docker.com/engine/install/
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+Após a instalação com sucesso, você pode rodar o Manutask com o seguinte comando no terminal (ou CMD para máquinas Windows):
+**$ docker run --name manutask -d -p 8000:8000 klaytonf/manutask:latest**
 
-## Add your files
+## Uso
+Após a instalação, conforme as instruções acima, basta abrir o navegador e digitar na barra de endereços:
+http://localhost:8000
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+Pronto! Só testar o Manutask.
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/pi-univesp-pirassununga/manutask/manutask-django.git
-git branch -M main
-git push -uf origin main
-```
+## Suporte
+Caso precise de ajuda, abra uma Issue!
 
-## Integrate with your tools
+## Autores
 
-- [ ] [Set up project integrations](https://gitlab.com/pi-univesp-pirassununga/manutask/manutask-django/-/settings/integrations)
+BEATRIZ 
+KLAYTON 
+LEYDIANA 
+PATRICK
 
-## Collaborate with your team
+## Status do projeto
+O Manutask é um protótipo de sistema de gerenciamento de atividades de manutenção que tem como objetivo facilitar o controle e planejamento das tarefas de manutenção em um setor predial.
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
+Sendo assim, o software é um WIP e futuras melhorias serão adicionadas conforme necessárias para apresentação à UNIVESP.
 ## Test and Deploy
 
 Use the built-in continuous integration in GitLab.
