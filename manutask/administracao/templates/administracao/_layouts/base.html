@@ -25,11 +25,17 @@
 
     <div class="collapse navbar-collapse" id="conteudo-navbar">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'administracao:index'%}">Página Inicial</a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'administracao:lista_pessoas'%}">Pessoas</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'administracao:lista_imoveis'%}">Imóveis</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'administracao:lista_oficinas'%}">Oficinas</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'administracao:lista_os'%}">Ordens de Serviço</a>
             </li>
         </ul>
     </div>

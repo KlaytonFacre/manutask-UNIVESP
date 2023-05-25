@@ -2,7 +2,7 @@
 {% extends "administracao/_layouts/base.html" %}
 
 <!-- Bloco que define o <title></title> da página -->
-{% block title %} Atualizar Pessoa {% endblock %}
+{% block title %} Atualizar Imóvel {% endblock %}
 
 <!-- Bloco de conteúdo da página -->
 {% block conteudo %}
@@ -11,7 +11,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"> Atualizar Pessoa </h5>
+          <h5 class="card-title"> Atualizar Imóvel </h5>
           <p class="card-text">
             <form method="post">
               {% csrf_token %}
@@ -21,7 +21,6 @@
               <button type="submit" class="btn btn-primary"> Confirma </button>
               <a href="{% url 'administracao:lista_pessoas' %}" class="btn btn-danger"> Cancelar </a>
             </form>
-          </p>
         </div>
       </div>
     </div>

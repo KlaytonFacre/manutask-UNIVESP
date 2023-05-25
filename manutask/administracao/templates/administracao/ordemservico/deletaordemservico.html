@@ -1,0 +1,31 @@
+<!-- Estendemos do template base -->
+{% extends "administracao/_layouts/base.html" %}
+
+<!-- Bloco que define o <title></title> da página -->
+{% block title %} Deletar OS {% endblock %}
+
+<!-- Bloco de conteúdo da página -->
+{% block conteudo %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title"> Deletar Ordem de Serviço </h3>
+          <p class="card-text">
+            <form method="post">
+              {% csrf_token %}
+              <p> Você confirma a exclusão da OS abaixo? </p>
+              <p> {{ os.id }} : {{ os.id_imovel }}</p>
+              <p> Aberta por: {{ os.id_reclamante }} </p>
+              <p> Aberta em: {{ os.timestamp_abertura }} </p>
+
+              <button type="submit" class="btn btn-danger"> Confirma </button>
+              <a href="{% url 'administracao:lista_os' %}" class="btn btn-secondary"> Cancelar </a>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

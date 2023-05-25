@@ -1,0 +1,32 @@
+<!-- Estendemos do template base -->
+{% extends "administracao/_layouts/base.html" %}
+
+<!-- Bloco que define o <title></title> da nossa página -->
+{% block title %}Imóveis cadastrados{% endblock %}
+
+<!-- Bloco de conteúdo da página -->
+{% block conteudo %}
+<div class="container">
+  <div class="row" align="right">
+    <a href="{% url 'administracao:cadastra_imovel' %}">
+      <i class="bi bi-asterisk fa-lg"></i>
+    </a>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      {% for imovel in imoveis %}
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"> ID: {{ imovel.id }} </h5>
+            <p class="card-text"> Endereço: {{ imovel.rua }}, {{ imovel.numero }} </p>
+            <p class="card-text"> Lat/Long: {{ imovel.latitude }}/{{ imovel.longitude }} </p>
+            <p class="card-text"> Locador: {{ imovel.id_locador }} </p>
+            <a href="{% url 'administracao:atualiza_imovel' pk=imovel.id %}" class="btn btn-secondary"> Atualizar </a>
+            <a href="{% url 'administracao:deleta_imovel' pk=imovel.id %}" class="btn btn-danger"> Deletar </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

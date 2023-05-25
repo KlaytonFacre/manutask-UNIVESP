@@ -2,7 +2,7 @@
 {% extends "administracao/_layouts/base.html" %}
 
 <!-- Bloco que define o <title></title> da página -->
-{% block title %} Atualizar Pessoa {% endblock %}
+{% block title %} Deletar Pessoa {% endblock %}
 
 <!-- Bloco de conteúdo da página -->
 {% block conteudo %}
@@ -11,17 +11,17 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
       <div class="card">
         <div class="card-body">
-          <h3 class="card-title"> Cadastrar Pessoa </h3>
+          <h3 class="card-title"> Deletar Pessoa </h3>
           <p class="card-text">
             <form method="post">
               {% csrf_token %}
+              <p> Você confirma a exclusão da pessoa abaixo? </p>
+              <p> {{ pessoa.nome }} {{ pessoa.sobrenome }}</p>
+              <p> CPF {{ pessoa.cpf }} </p>
 
-              {{ form }}
-
-              <button type="submit" class="btn btn-primary"> Confirma </button>
-              <a href="{% url 'administracao:lista_pessoas' %}" class="btn btn-danger"> Cancelar </a>
+              <button type="submit" class="btn btn-danger"> Confirma </button>
+              <a href="{% url 'administracao:lista_pessoas' %}" class="btn btn-secondary"> Cancelar </a>
             </form>
-          </p>
         </div>
       </div>
     </div>
