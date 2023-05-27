@@ -46,6 +46,9 @@ class CadastraOrdemServicoForm(forms.ModelForm):
         fields = '__all__'
         exclude = [
             'timestamp_abertura',
+            'timestamp_solucao',
+            'descricao_solucao',
+            'id_solucionador',
         ]
         labels = {
             'id_reclamante': 'Aberta por',

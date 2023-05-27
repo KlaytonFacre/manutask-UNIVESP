@@ -10,9 +10,8 @@
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
       <div class="card">
+        <div class="card-header"> Abrir uma nova Ordem de Serviço (OS) </div>
         <div class="card-body">
-          <h3 class="card-title"> Abrir uma nova Ordem de Serviço (OS) </h3>
-          <p class="card-text">
             <form method="post">
               {% csrf_token %}
 
@@ -21,6 +20,9 @@
               <button type="submit" class="btn btn-primary"> Confirma </button>
               <a href="{% url 'administracao:lista_os' %}" class="btn btn-danger"> Cancelar </a>
             </form>
+        </div>
+        <div class="card-footer">
+          <footer class="blockquote-footer">Aberta em: {{ ordem_servico.timestamp_abertura }}</footer>
         </div>
       </div>
     </div>

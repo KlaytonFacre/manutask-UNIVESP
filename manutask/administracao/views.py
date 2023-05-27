@@ -123,6 +123,7 @@ class OrdemServicoDeleteView(DeleteView):
 
 class OrdemServicoCreateView(CreateView):
     template_name = 'administracao/ordemservico/cadastraordemservico.html'
+    context_object_name = 'ordem_servico'
     model = OrdemServico
     form_class = CadastraOrdemServicoForm
     success_url = reverse_lazy('administracao:lista_os')

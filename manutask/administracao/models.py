@@ -48,6 +48,12 @@ class Imovel(models.Model):
         null=True
     )
 
+    def __repr__(self):
+        return f'{self.rua}, {self.numero}'
+
+    def __str__(self):
+        return f'{self.rua}, {self.numero}'
+
 
 class OrdemServico(models.Model):
     id_reclamante = models.ForeignKey(
