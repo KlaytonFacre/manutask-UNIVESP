@@ -82,6 +82,5 @@ class OrdemServico(models.Model):
         Pessoa,
         on_delete=models.CASCADE,
         related_name='solucionador',
-        default=1,
         null=True
     )
