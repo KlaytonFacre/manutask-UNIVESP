@@ -1,0 +1,31 @@
+<!-- Estendemos do template base -->
+{% extends "administracao/_layouts/base.html" %}
+
+<!-- Bloco que define o <title></title> da página -->
+{% block title %} Cadastra OS {% endblock %}
+
+<!-- Bloco de conteúdo da página -->
+{% block conteudo %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="card">
+        <div class="card-header"> Abrir uma nova Ordem de Serviço (OS) </div>
+        <div class="card-body">
+            <form method="post">
+              {% csrf_token %}
+
+              {{ form }}
+
+              <button type="submit" class="btn btn-primary"> Confirma </button>
+              <a href="{% url 'administracao:lista_os' %}" class="btn btn-danger"> Cancelar </a>
+            </form>
+        </div>
+        <div class="card-footer">
+          <footer class="blockquote-footer">Aberta em: {{ ordem_servico.timestamp_abertura }}</footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
